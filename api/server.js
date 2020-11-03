@@ -1,10 +1,10 @@
-import express from 'express';
-import jsonGraphqlExpress from 'json-graphql-server';
+const express = require('express');
+const {graphqlHTTP} = require('express-graphql');
+const schema = require('./schema');
 
-import courseData from './db/courses.js'
-
-const PORT = 4000;
 const app = express();
-
-app.use('/graphql', jsonGraphqlExpress.default (courseData));
-app.listen(PORT);
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  graphiql: true,
+}));
+app.listen(4000, () => console.log('Now browse to localhost:4000/graphql'));
