@@ -5,9 +5,10 @@ Simple JSON GraphQL Server - React / Node
 
 This project has the following components:
 
-- Next.js and React
-- GraphQL server running on `localhost:3000/graphql`
-  - *Schema is automatically generated*
+- Next.js, React and Node.js api
+- GraphQL server running on `localhost:4000/graphql`
+  - Schema is defined in `./api/schema.js`
+  - Data is located in `./api/db/courses.json`
   - GraphiQL is included with this graphQL server
 
 ## Running the application
@@ -27,7 +28,7 @@ This project has the following components:
 - Use any design system you want such as Bootstrap, Chakra UI, Material UI to help with design and layout.
 - Use TypeScript.
 - Don't spend too much time on the styling, basic styling is fine. Functionality and accessability is the main focus on this Exercise.
-- Do **NOT** spend more than 2-3 hours doing this Exercise. If you don't complete all 3 tasks in this time, that is fine.
+- Do **NOT** spend more than 2-3 hours doing this Exercise. If you don't complete all the tasks in this time, that is fine.
 
 ## Exercise Submission
 
@@ -41,12 +42,16 @@ When navigating to `localhost:3000/courses`, list the courses based on the wiref
 
 ## Task 2
 
-Make the following filters on the course list 
+Create a filter resolver on the graphQL server `./api` to allow for filtering on the following fields:
 - *Title* - Free text field
 - *Class Type* - Select
 - *Level* - Select
 
-## Task 3 - Bonus (Not required)
+## Task 3
+
+On the client, implement filtering for the fields added in Task 2 and display the filtered results.
+
+## Task 4 - Bonus (Not required)
 
 Add a basket list on the page and add a class to this list when `Book` button is clicked.
 
