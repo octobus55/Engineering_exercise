@@ -56,9 +56,23 @@ const RootQuery = new GraphQLObjectType({
     },
     courses: {
       type: new GraphQLList(CourseType),
-      args: { },
-      resolve() {
-        return courses;
+      args: {
+        type: { type: GraphQLString },
+        title: { type: GraphQLString},
+        level: { type: GraphQLString}
+    },
+      resolve(parentValue, args) {
+        let filteredCourses = [...courses]
+        if(args.title) {
+          filteredCourses = filteredCourses.filter(course => course.title.includes(args.title))
+        }
+        if(args.type) {
+          filteredCourses = filteredCourses.filter(course => course.type === args.type)
+        }
+        if(args.level) {
+          filteredCourses = filteredCourses.filter(course => course.level === args.level)
+        }
+        return filteredCourses;
       }
     }
   }
