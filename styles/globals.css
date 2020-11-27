@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.MuiPaper-root {
+  margin: 20px;
+}
