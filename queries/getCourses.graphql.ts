@@ -1,6 +1,6 @@
-export const getCoursesQuery = `
+export const handleCoursesQuery = (title, level, type) => `
 {
-    courses(type: "", title: "", level: "") {
+    courses(type: "${type}", title:" ${title}", level: "${level}") {
       id
       title
       image

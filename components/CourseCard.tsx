@@ -43,10 +43,10 @@ const CourseCard: React.FC<ICourseCardProps> = ({
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
+          alt={`${title} class image`}
           height="140"
           src={image}
-          title="Contemplative Reptile"
+          title={title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

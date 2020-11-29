@@ -12,3 +12,20 @@ export interface ICourse {
   level: string;
   active: boolean;
 }
+
+export interface IFilterFormState {
+  title: string;
+  type: string;
+  level: string;
+}
+
+export enum CourseLevel {
+  intermediate = "INTERMEDIATE",
+  advanced = "ADVANCED",
+  beginner = "BEGINNER",
+}
+
+export enum CourseType {
+  studio = "STUDIO",
+  online = "ONLINE",
+}
